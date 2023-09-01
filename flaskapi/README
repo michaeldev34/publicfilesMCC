@@ -9,6 +9,7 @@ Consideraciones:
 -no esta terminada todavia por falta de tiempo
 -asume que usuario ejecuta el codigo en su propia computadora accediendo a servidor local
 -usa un modelo inferior del recomendado
--para la tarea de tipo NER de Procesamiento Natural del Lenguaje
+-para la tarea de tipo NER de Procesamiento Natural del Lenguaje se usa modelo inferior a los actuales mas competentes
+como GPT-4 o LARGE-BERT ya sea con fine tuning o sin fine tuning.
 
 '''
