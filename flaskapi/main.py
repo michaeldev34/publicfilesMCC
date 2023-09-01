@@ -5,6 +5,10 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 from requests import request
+import spacy
+
+# Cargar el modelo de SpaCy para el reconocimiento de entidades en español
+nlp = spacy.load('es_core_news_sm')
 
 enviroment = config['development']
 
@@ -52,6 +56,30 @@ def update_user(id):
 def delete_user(id):
     response = {'message': 'success'}
     return jsonify(response)
+
+@app.route('/api/v1/users/ner', methods=['POST'])
+def recognize_entities():
+    try:
+        data = request.json
+        oraciones = data['oraciones']
+        
+        resultado = []
+        for oracion in oraciones:
+            doc = nlp(oracion)
+            entidades = {}
+            
+            for ent in doc.ents:
+                entidades[ent.text] = ent.label_
+            
+            resultado.append({
+                "oraciones": oraciones,
+                "entidades": entidades
+            })
+        
+        return jsonify({"resultado": resultado})
+    
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
     app.run(debug=True)
