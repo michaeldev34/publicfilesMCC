@@ -1,0 +1,14 @@
+'''Flask Api Utilizacion Por Miguel Camacho Cervantes
+
+Instrucciones de utilizacion para el usuario:
+1 en la command prompt
+
+
+Consideraciones: 
+-asume el usuario de esta API es de windows solamente y por ahora
+-no esta terminada todavia por falta de tiempo
+-asume que usuario ejecuta el codigo en su propia computadora accediendo a servidor local
+-usa un modelo inferior del recomendado
+-para la tarea de tipo NER de Procesamiento Natural del Lenguaje
+
+'''
