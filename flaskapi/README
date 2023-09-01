@@ -1,11 +1,24 @@
 '''Flask Api Utilizacion Por Miguel Camacho Cervantes
 
 Instrucciones de utilizacion para el usuario:
-1 en la command prompt
+1 en la command prompt de windows, se instalan las librerias apropiadas para correr el codigo correctamente
+de la sig manera:
+1.1 pip install jsonify
+pip install flask_sqlalchemy
+pip install requests
+pip install flask
 
+2 poner en command prompt despues de copiar por nombre y codigo los archivos en un ide local, el siguiente
+codigo: python (aqui adentro va la direccion local del archivo main.py de tu directorio local en formato
+        string)
+
+3 revisar errores y hacer debugging apropiadamente y no parar hasta que funcione
 
 Consideraciones: 
--asume el usuario de esta API es de windows solamente y por ahora
+-hace falta poner la aplicacion dentro de un contexto correctamente (error de command prompt) dentro de flask,
+para que pueda leer el archivo y ejecutarlo correctamente
+-asume el usuario de esta API es de windows solamente y por ahora, asi como el uso de un environment local para
+ejecucion del proyecto
 -no esta terminada todavia por falta de tiempo
 -asume que usuario ejecuta el codigo en su propia computadora accediendo a servidor local
 -usa un modelo inferior del recomendado
