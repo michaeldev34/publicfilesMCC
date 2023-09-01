@@ -81,5 +81,20 @@ def recognize_entities():
     except Exception as e:
         return jsonify({"error": str(e)})
 
+#IMPLEMENTACION DESARREGLADA CON HUGGINGFACE DE MEJOR MODELO DE NLP PARA LA TAREA EN MANO
+#MUCHA MEJOR IMPLEMENTACION DEL MODELO PARA NLP-NER,BERT TIENE UNA PRECISION DE 99% EN GENERAL CUANDO SPACY SOLO EL 95% 
+'''from transformers import AutoTokenizer, AutoModelForTokenClassification
+from transformers import pipeline
+
+tokenizer = AutoTokenizer.from_pretrained("dslim/bert-base-NER")
+model = AutoModelForTokenClassification.from_pretrained("dslim/bert-base-NER")
+
+nlp = pipeline("ner", model=model, tokenizer=tokenizer)
+example = "My name is Wolfgang and I live in Berlin"
+
+ner_results = nlp(example)
+print(ner_results)'''
+
+
 if __name__ == '__main__':
     app.run(debug=True)
